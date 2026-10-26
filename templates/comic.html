@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111111" />
+    <meta name="description" content="閱讀《@@TITLE@@》全 @@TOTAL@@ 頁漫畫。" />
+    <title>@@TITLE@@ · 漫畫閱讀</title>
+    <link rel="icon" href="../../assets/leaf.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" type="image/webp" href="@@FIRST@@" id="first-page-preload" />
+    <link rel="stylesheet" href="../../assets/comic-reader.css" />
+    <script id="comic-config" type="application/json">@@CONFIG@@</script>
+    <script src="../../assets/comic-reader.js" defer></script>
+  </head>
+  <body>
+    <main id="reader">
+      <div class="reading-bar" aria-label="閱讀導覽">
+        <div class="reading-bar-inner">
+          <a class="brand" href="../../#collection" aria-label="回到作品書架">
+            <span class="brand-mark" aria-hidden="true">✦</span>
+            <span>@@TITLE@@</span>
+          </a>
+          <div class="control-group" role="group" aria-label="閱讀方式">
+            <button type="button" data-mode="single" aria-pressed="false">單頁</button>
+            <button type="button" data-mode="continuous" aria-pressed="true">連續閱讀</button>
+          </div>
+          <div class="page-status" aria-live="polite"><span class="status-label">正在閱讀</span><strong id="page-number">01</strong><span class="status-total">/ @@TOTAL@@</span></div>
+          <div class="control-group" role="group" aria-label="顯示倍率">
+            <button type="button" data-fit="default" aria-pressed="false">預設</button>
+            <button type="button" data-fit="width" aria-pressed="false">適合寬度</button>
+            <button type="button" data-fit="height" aria-pressed="true">適合高度</button>
+          </div>
+          <button class="text-button" id="open-pages" type="button" aria-label="頁面一覽" aria-haspopup="dialog"><span class="picker-label">頁面一覽</span><span class="picker-icon" aria-hidden="true">▦</span></button>
+        </div>
+        <div class="progress-track" role="progressbar" aria-label="閱讀進度" aria-valuemin="1" aria-valuemax="@@TOTAL@@" aria-valuenow="1" id="progress"><span id="progress-fill"></span></div>
+      </div>
+
+      <div class="page-shell" id="page-shell">
+        <figure class="comic-page">
+          <img id="comic-image" src="@@FIRST@@" alt="《@@TITLE@@》第 1 頁" width="@@WIDTH@@" height="@@HEIGHT@@" fetchpriority="high" decoding="async" draggable="false" />
+        </figure>
+        <div class="image-error" id="image-error" hidden>
+          <p>這一頁暫時無法載入。</p>
+          <button class="retry-button" id="retry" type="button">重新載入</button>
+        </div>
+      </div>
+      <div class="continuous-pages" id="continuous-pages" hidden></div>
+
+      <p class="reader-hint" id="reader-hint">圖片左鍵下一頁、右鍵上一頁；亦可用 ← → 或左右滑動</p>
+      <nav class="comic-end"><a href="../../books/@@SLUG@@/">閱讀小說原作</a><a href="../../#collection">回到作品書架</a></nav>
+    </main>
+
+    <dialog id="pages-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-header">
+        <div><span class="dialog-eyebrow">@@TITLE@@</span><h2 id="dialog-title">選擇頁面</h2></div>
+        <button class="close-button" id="close-pages" type="button" aria-label="關閉頁面一覽">×</button>
+      </div>
+      <div class="thumbnail-grid" id="thumbnail-grid"></div>
+    </dialog>
+  </body>
+</html>

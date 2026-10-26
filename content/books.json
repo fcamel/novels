@@ -5,7 +5,11 @@
     "subtitle": "十步採一葉，千里不留莖。",
     "description": "江湖中有門絕學，名曰「採九層塔」。二十年來，無人練成。華山之巔，三位高手相逢，一場論葉就此展開。",
     "genre": "武俠・幽默",
-    "cover": "huashan-cover.webp",
-    "text": "huashan-lun-ye.txt"
+    "cover": "huashan-lun-ye.webp",
+    "text": "huashan-lun-ye.txt",
+    "bold_paragraphs": [
+      "十步採一葉，\n千里不留莖。\n誰家亂採菜，\n阿婆不留情。"
+    ],
+    "comic": "comics/huashan-lun-ye/comic.json"
   }
 ]

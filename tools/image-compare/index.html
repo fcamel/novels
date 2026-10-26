@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>漫畫圖片比較</title><link rel="stylesheet" href="style.css"><script src="compare.js" defer></script></head>
+<body><header><h1>原圖與 WebP 比較</h1><p>先看字邊、臉部陰影與密集線條。100% 表示圖片原生尺寸；兩側捲動位置會同步。</p>
+<div class="controls"><label>頁面 <select id="page"></select></label><label>品質 <select id="quality"><option value="80">WebP 80</option><option value="70">WebP 70</option></select></label><label>大小 <select id="zoom"><option value="fit">適合視窗</option><option value="1" selected>100%</option><option value="2">200%</option></select></label><label>比較 <select id="mode"><option value="side">並排</option><option value="toggle">同位置切換</option></select></label><button id="toggle" hidden>目前：原圖（點擊切換）</button></div><p id="stats" aria-live="polite"></p></header>
+<main id="views"><section id="original-panel"><h2>原圖</h2><div class="viewport" id="left"><img id="original" alt="原圖" draggable="false"></div></section><section id="compressed-panel"><h2 id="compressed-title">WebP</h2><div class="viewport" id="right"><img id="compressed" alt="壓縮版本" draggable="false"></div></section></main>
+<footer>本工具只供比較，不會自動替換原稿。確認品質後，再執行文件中的採用指令。PNG 原稿會移至本機備存，正式清單改用 WebP。</footer></body></html>
